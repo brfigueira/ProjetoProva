@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz de Lógica Java</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="login-screen">
+        <h1>Login</h1>
+        <input type="text" id="login" placeholder="Login">
+        <input type="password" id="senha" placeholder="Senha">
+        <button onclick="logar()">Entrar</button>
+        <p id="login-error" class="error"></p>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+        <h2 id="question-text"></h2>
+        <div id="answers"></div>
+        <button id="next-btn" onclick="nextQuestion()">Próxima</button>
+    </div>
+
+    <div id="result-screen" class="hidden">
+        <h1>Resultado</h1>
+        <p id="score"></p>
+        <button onclick="downloadResults()">Baixar JSON</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
