@@ -216,6 +216,7 @@ const questions = [
  ************************************************************/
 const results = {
     login: "",
+    nome: "",
     status: "",
     score: 0,
     answers: []
@@ -297,6 +298,8 @@ function nextQuestion() {
             return;
         }
 
+        results.nome = textInput.value; // CORREÇÃO ADICIONADA
+
         results.answers.push({
             question: q.text,
             selected: textInput.value,
@@ -354,7 +357,7 @@ function finishQuiz(status) {
     document.getElementById("quiz-screen").classList.add("hidden");
     document.getElementById("result-screen").classList.remove("hidden");
 
-    const nomeAluno = results.answers[0]?.selected || "Não informado";
+    const nomeAluno = results.nome || "Não informado";
 
     document.getElementById("score").innerText =
         status === "Teste concluído com sucesso"
@@ -381,6 +384,7 @@ document.addEventListener("visibilitychange", () => {
 function sendResultsByEmail() {
     const templateParams = {
         login: results.login,
+        nome: results.nome, // CORREÇÃO ADICIONADA
         status: results.status,
         score: `${results.score} de ${questions.length}`,
         date: new Date().toLocaleString("pt-BR"),
