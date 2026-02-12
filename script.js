@@ -1,8 +1,8 @@
 /************************************************************
  * CONFIGURAÇÕES EMAILJS
  ************************************************************/
-const EMAILJS_SERVICE_ID = "service_vjk4zve";       // <- seu Service ID
-const EMAILJS_TEMPLATE_ID = "template_vfqog6o"; // <- seu Template ID
+const EMAILJS_SERVICE_ID = "service_vjk4zve";
+const EMAILJS_TEMPLATE_ID = "template_vfqog6o";
 
 /************************************************************
  * USUÁRIOS AUTORIZADOS (USO ÚNICO)
@@ -19,7 +19,6 @@ const users = [
     { login: "aluno09", senha: "a8m9k2q7" },
     { login: "aluno10", senha: "k2q8m7a9" },
     { login: "aluno11", senha: "9m7a2kq8" },
-
     { login: "aluno12", senha: "b6r4n8t2" },
     { login: "aluno13", senha: "4t2b8n6r" },
     { login: "aluno14", senha: "n2r6b8t4" },
@@ -35,7 +34,6 @@ const users = [
     { login: "aluno24", senha: "b2t6n8r4" },
     { login: "aluno25", senha: "6n4r2t8b" },
     { login: "aluno26", senha: "t8b6r4n2" },
-
     { login: "alunoteste", senha: "1234" },
     { login: "testealuno", senha: "1234" }
 ];
@@ -50,7 +48,6 @@ let quizFinished = false;
 /************************************************************
  * PERGUNTAS
  ************************************************************/
-// Baseado no Plano de Curso "Programação em Inteligência Artificial Generativa" (SENAI-SP, 2023) :contentReference[oaicite:0]{index=0}
 const questions = [
   {
         text: "0. Qual seu nome completo?",
@@ -255,7 +252,7 @@ function logar() {
 }
 
 /************************************************************
- * MOSTRAR QUESTÃO
+ * MOSTRAR QUESTÃO (CORRIGIDO)
  ************************************************************/
 function showQuestion() {
     const q = questions[currentQuestion];
@@ -263,6 +260,19 @@ function showQuestion() {
 
     const answersDiv = document.getElementById("answers");
     answersDiv.innerHTML = "";
+
+    if (q.type === "text") {
+        const input = document.createElement("input");
+        input.type = "text";
+        input.id = "text-answer";
+        input.placeholder = "Digite seu nome completo";
+        input.style.padding = "10px";
+        input.style.width = "100%";
+        input.style.marginTop = "10px";
+
+        answersDiv.appendChild(input);
+        return;
+    }
 
     q.options.forEach((opt, idx) => {
         const label = document.createElement("label");
@@ -275,16 +285,37 @@ function showQuestion() {
 }
 
 /************************************************************
- * PRÓXIMA QUESTÃO + MOSTRAR RESPOSTA CORRETA
+ * PRÓXIMA QUESTÃO (CORRIGIDO)
  ************************************************************/
 function nextQuestion() {
+    const q = questions[currentQuestion];
+
+    if (q.type === "text") {
+        const textInput = document.getElementById("text-answer");
+
+        if (!textInput.value.trim()) {
+            alert("Digite seu nome antes de avançar.");
+            return;
+        }
+
+        results.answers.push({
+            question: q.text,
+            selected: textInput.value,
+            correct: "N/A",
+            isCorrect: true
+        });
+
+        currentQuestion++;
+        showQuestion();
+        return;
+    }
+
     const selected = document.querySelector('input[name="option"]:checked');
     if (!selected) {
         alert("Selecione uma opção antes de avançar.");
         return;
     }
 
-    const q = questions[currentQuestion];
     const selectedIdx = parseInt(selected.value);
     const isCorrect = selectedIdx === q.correct;
 
@@ -333,7 +364,7 @@ function finishQuiz(status) {
 }
 
 /************************************************************
- * INVALIDAÇÃO AUTOMÁTICA (TROCA DE ABA / PERDA DE FOCO)
+ * INVALIDAÇÃO AUTOMÁTICA
  ************************************************************/
 document.addEventListener("visibilitychange", () => {
     if (document.hidden && currentUser && !quizFinished) {
