@@ -8,32 +8,32 @@ const EMAILJS_TEMPLATE_ID = "template_vfqog6o";
  * USUÁRIOS AUTORIZADOS (USO ÚNICO)
  ************************************************************/
 const users = [
-    { login: "aluno01", senha: "a9k3m7q2" },
-    { login: "aluno02", senha: "m2q8a9k7" },
-    { login: "aluno03", senha: "7kq9a2m3" },
-    { login: "aluno04", senha: "q7m2k9a8" },
-    { login: "aluno05", senha: "9a7k2m8q" },
-    { login: "aluno06", senha: "k8q7m2a9" },
-    { login: "aluno07", senha: "2m9a7kq8" },
-    { login: "aluno08", senha: "7qk2a9m8" },
-    { login: "aluno09", senha: "a8m9k2q7" },
-    { login: "aluno10", senha: "k2q8m7a9" },
-    { login: "aluno11", senha: "9m7a2kq8" },
-    { login: "aluno12", senha: "b6r4n8t2" },
-    { login: "aluno13", senha: "4t2b8n6r" },
-    { login: "aluno14", senha: "n2r6b8t4" },
-    { login: "aluno15", senha: "8b4t6r2n" },
-    { login: "aluno16", senha: "r6n2t8b4" },
-    { login: "aluno17", senha: "2b8r4n6t" },
-    { login: "aluno18", senha: "t4n2b6r8" },
-    { login: "aluno19", senha: "6r8t4b2n" },
-    { login: "aluno20", senha: "n6b2r8t4" },
-    { login: "aluno21", senha: "8t2n4r6b" },
-    { login: "aluno22", senha: "r4b6t8n2" },
-    { login: "aluno23", senha: "2n8r6b4t" },
-    { login: "aluno24", senha: "b2t6n8r4" },
-    { login: "aluno25", senha: "6n4r2t8b" },
-    { login: "aluno26", senha: "t8b6r4n2" },
+    { login: "elisandra", senha: "123456" },
+    { login: "lais", senha: "123456" },
+    { login: "lucas", senha: "123456" },
+    { login: "pollyana", senha: "123456" },
+    { login: "debora", senha: "123456" },
+    { login: "thiago", senha: "123456" },
+    { login: "iago", senha: "123456" },
+    { login: "gabriel", senha: "123456" },
+    { login: "vinicius", senha: "123456" },
+    { login: "felipe", senha: "123456" },
+    { login: "fabio", senha: "123456" },
+    { login: "miqueias", senha: "123456" },
+    { login: "francisco", senha: "123456" },
+    { login: "iara", senha: "123456" },
+    { login: "layla", senha: "123456" },
+    { login: "danilo", senha: "123456" },
+    { login: "aluno17", senha: "123456" },
+    { login: "aluno18", senha: "123456" },
+    { login: "aluno19", senha: "123456" },
+    { login: "aluno20", senha: "123456" },
+    { login: "aluno21", senha: "123456" },
+    { login: "aluno22", senha: "123456" },
+    { login: "aluno23", senha: "123456" },
+    { login: "aluno24", senha: "123456" },
+    { login: "aluno25", senha: "123456" },
+    { login: "aluno26", senha: "123456" },
     { login: "alunoteste", senha: "1234" },
     { login: "testealuno", senha: "1234" }
 ];
@@ -55,159 +55,204 @@ const questions = [
         required: true
     },
     {
-        text: "1. Qual alternativa descreve melhor o objetivo de usar IA generativa em soluções de software?",
+        text: "1. Qual função é utilizada para exibir uma mensagem na tela em Python?",
         options: [
-            "Apenas criar imagens artísticas sem relação com sistemas",
-            "Implementar soluções de software usando IA generativa, corrigindo erros e melhorando código e desempenho",
-            "Substituir totalmente programadores por modelos prontos",
-            "Aumentar a velocidade da internet do laboratório"
+            "show()",
+            "echo()",
+            "print()",
+            "display()"
         ],
-        correct: 1
+        correct: 2
     },
     {
-        text: "2. Para acompanhar um curso de programação com IA generativa, qual requisito de acesso técnico é explicitado no plano?",
+        text: "2. Qual função permite receber dados digitados pelo usuário?",
         options: [
-            "Experiência anterior em programação de computadores",
-            "Experiência anterior em modelagem 3D",
-            "Apenas informática básica",
-            "Apenas saber usar redes sociais"
+            "read()",
+            "scan()",
+            "input()",
+            "print()"
+        ],
+        correct: 2
+    },
+    {
+        text: "3. Qual destes é um tipo de dado inteiro em Python?",
+        options: [
+            "int",
+            "string",
+            "float",
+            "bool"
         ],
         correct: 0
     },
     {
-        text: "3. Qual linguagem é recomendada no plano para elaborar programas de IA, devido ao uso de bibliotecas?",
-        options: ["Java", "C#", "Python", "PHP"],
+        text: "4. Qual operador representa a potência em Python?",
+        options: [
+            "^",
+            "**",
+            "//",
+            "%"
+        ],
+        correct: 1
+    },
+    {
+        text: "5. Qual operador retorna o resto da divisão?",
+        options: [
+            "//",
+            "%",
+            "/",
+            "**"
+        ],
+        correct: 1
+    },
+    {
+        text: "6. Qual operador representa 'maior ou igual'?",
+        options: [
+            ">=",
+            "=>",
+            "><",
+            "=="
+        ],
+        correct: 0
+    },
+    {
+        text: "7. O operador '==' serve para:",
+        options: [
+            "Atribuir um valor",
+            "Comparar dois valores",
+            "Somar números",
+            "Criar variáveis"
+        ],
+        correct: 1
+    },
+    {
+        text: "8. Qual operador lógico retorna verdadeiro somente quando ambas as condições são verdadeiras?",
+        options: [
+            "or",
+            "and",
+            "not",
+            "xor"
+        ],
+        correct: 1
+    },
+    {
+        text: "9. Qual estrutura é utilizada para tomar decisões em Python?",
+        options: [
+            "for",
+            "while",
+            "if",
+            "list"
+        ],
         correct: 2
     },
     {
-        text: "4. Em programação, o que é um bug (erro) mais comum em aplicações?",
+        text: "10. O comando elif é utilizado para:",
         options: [
-            "Uma melhoria de performance automática",
-            "Um comportamento incorreto do programa (ex.: travar, resultado errado)",
-            "Um recurso de segurança do sistema operacional",
-            "Um tipo de rede neural"
+            "Encerrar o programa",
+            "Criar uma repetição",
+            "Adicionar uma nova condição",
+            "Declarar uma variável"
+        ],
+        correct: 2
+    },
+    {
+        text: "11. O bloco else será executado quando:",
+        options: [
+            "A condição do if for verdadeira",
+            "Nenhuma condição anterior for verdadeira",
+            "Sempre",
+            "Nunca"
         ],
         correct: 1
     },
     {
-        text: "5. Qual prática ajuda mais a 'identificar e corrigir erros' em código?",
+        text: "12. Qual estrutura é utilizada quando sabemos exatamente quantas vezes um bloco será repetido?",
         options: [
-            "Ignorar mensagens de erro",
-            "Testar o programa e analisar logs/saídas e mensagens de exceção",
-            "Trocar a linguagem do projeto sem motivo",
-            "Remover todas as validações de entrada"
+            "while",
+            "for",
+            "if",
+            "match"
         ],
         correct: 1
     },
     {
-        text: "6. Qual das opções abaixo é um exemplo de Inteligência Artificial (IA) no contexto do curso?",
+        text: "13. O while executa enquanto:",
         options: [
-            "Planilha com fórmulas fixas",
-            "Algoritmo que aprende padrões a partir de dados para tomar decisões",
-            "Arquivo PDF com instruções",
-            "Banco de dados relacional sem modelos"
+            "A condição for verdadeira",
+            "O programa estiver aberto",
+            "O usuário pressionar Enter",
+            "Existir uma lista"
+        ],
+        correct: 0
+    },
+    {
+        text: "14. Qual destas opções representa corretamente uma lista?",
+        options: [
+            "(1,2,3)",
+            "{1,2,3}",
+            "[1,2,3]",
+            "<1,2,3>"
+        ],
+        correct: 2
+    },
+    {
+        text: "15. Qual método adiciona um novo elemento ao final de uma lista?",
+        options: [
+            "insert()",
+            "append()",
+            "push()",
+            "add()"
         ],
         correct: 1
     },
     {
-        text: "7. Qual alternativa define melhor 'Aprendizado de Máquina' (Machine Learning)?",
+        text: "16. Qual característica diferencia uma tupla de uma lista?",
         options: [
-            "Programar todas as regras manualmente para cada caso",
-            "Treinar modelos a partir de dados para reconhecer padrões e fazer previsões/decisões",
-            "Somente criar interfaces gráficas",
-            "Somente armazenar dados em nuvem"
-        ],
-        correct: 1
-    },
-    {
-        text: "8. Em Machine Learning, qual é a diferença principal entre aprendizado supervisionado e não supervisionado?",
-        options: [
-            "Supervisionado não usa dados; não supervisionado usa dados",
-            "Supervisionado usa dados rotulados (com resposta); não supervisionado busca padrões sem rótulos",
-            "Supervisionado só funciona com imagens; não supervisionado só com texto",
+            "A tupla pode ser alterada",
+            "A lista é imutável",
+            "A tupla é imutável",
             "Não existe diferença"
         ],
+        correct: 2
+    },
+    {
+        text: "17. Qual destas opções representa corretamente uma tupla?",
+        options: [
+            "[1,2,3]",
+            "(1,2,3)",
+            "{1,2,3}",
+            "<1,2,3>"
+        ],
         correct: 1
     },
     {
-        text: "9. Qual cenário é mais compatível com aprendizado por reforço?",
+        text: "18. Em um dicionário, cada informação é formada por:",
         options: [
-            "Classificar e-mails como spam/ham com exemplos rotulados",
-            "Agrupar clientes por comportamento sem rótulos",
-            "Um agente aprender jogando (recebendo recompensa/punição) para melhorar decisões",
-            "Somar valores de uma coluna no Excel"
+            "Linha e coluna",
+            "Índice e valor",
+            "Chave e valor",
+            "Nome e lista"
         ],
         correct: 2
     },
     {
-        text: "10. Por que pré-processamento de dados é importante antes de treinar um modelo?",
+        text: "19. Qual destas opções representa corretamente um dicionário?",
         options: [
-            "Porque torna o hardware mais barato",
-            "Porque melhora a qualidade do dado (limpeza, normalização, tratamento de faltantes) e impacta o desempenho do modelo",
-            "Porque substitui a etapa de avaliação",
-            "Porque impede qualquer viés automaticamente"
+            "[1,2,3]",
+            "(1,2,3)",
+            "{'nome':'Maria','idade':20}",
+            "<1,2,3>"
+        ],
+        correct: 2
+    },
+    {
+        text: "20. O comando match...case é utilizado para:",
+        options: [
+            "Criar listas",
+            "Substituir vários if e elif quando há comparação de valores",
+            "Criar funções",
+            "Fazer repetições"
         ],
         correct: 1
-    },
-    {
-        text: "11. Qual métrica/abordagem é mais apropriada para avaliar um modelo de classificação?",
-        options: ["Apenas tamanho do dataset", "Acurácia, precisão, recall (dependendo do problema)", "Quantidade de pastas no projeto", "Número de linhas de código"],
-        correct: 1
-    },
-    {
-        text: "12. O que é uma Rede Neural Artificial, de forma geral?",
-        options: [
-            "Um tipo de planilha inteligente",
-            "Um modelo inspirado no cérebro, composto por camadas de neurônios (unidades) ajustando pesos no treinamento",
-            "Um antivírus para Python",
-            "Um banco de dados para imagens"
-        ],
-        correct: 1
-    },
-    {
-        text: "13. Qual biblioteca é citada no plano para implementação de Machine Learning?",
-        options: ["React", "Scikit-learn", "Laravel", "Spring Boot"],
-        correct: 1
-    },
-    {
-        text: "14. Qual biblioteca/framework é citado no plano para redes neurais (deep learning) em Python?",
-        options: ["TensorFlow/Keras", "jQuery", "Bootstrap", "Express.js"],
-        correct: 0
-    },
-    {
-        text: "15. Em Processamento de Linguagem Natural (PLN/NLP), qual tarefa é explicitamente citada no plano?",
-        options: ["Roteamento de rede", "Análise de sentimentos", "Criptografia de disco", "Particionamento de tabelas"],
-        correct: 1
-    },
-    {
-        text: "16. Qual biblioteca é citada no plano para PLN/NLP?",
-        options: ["NLTK e spaCy", "NumPy e Pandas", "Axios e Fetch", "Mockito e JUnit"],
-        correct: 0
-    },
-    {
-        text: "17. Em Visão Computacional, qual tarefa é explicitamente mencionada no plano?",
-        options: ["Detecção de objetos", "Criação de tabelas SQL", "Balanceamento de carga", "Gerenciamento de memória RAM"],
-        correct: 0
-    },
-    {
-        text: "18. Qual ferramenta/biblioteca é citada no plano para Visão Computacional e detecção de objetos?",
-        options: ["OpenCV e YOLO", "Hibernate e JPA", "Next.js e Tailwind", "RabbitMQ e Kafka"],
-        correct: 0
-    },
-    {
-        text: "19. O que significa 'criar modelos personalizados' no contexto do curso?",
-        options: [
-            "Copiar um modelo pronto sem ajustes",
-            "Definir arquitetura/treinamento e ajustar um modelo para um problema específico (dados e objetivos do projeto)",
-            "Apenas desenhar diagramas de rede",
-            "Trocar a cor da interface do sistema"
-        ],
-        correct: 1
-    },
-    {
-        text: "20. Qual preocupação/tema é explicitamente listado no conteúdo de IA do curso?",
-        options: ["Ética", "Contabilidade", "Legislação trabalhista", "Eletrônica digital"],
-        correct: 0
     }
 ];
 
